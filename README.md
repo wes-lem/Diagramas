@@ -22,15 +22,5 @@
 
     RegistrarDataMatricula --> fimMatricula((fim matricula));
 
-    style CadastrarAluno fill:#ace,stroke:#333,stroke-width:2px;
-    style PreencherDadosAluno fill:#ace,stroke:#333,stroke-width:2px;
-    style SistemaGeraMatricula fill:#ace,stroke:#333,stroke-width:2px;
-    style RealizarMatricula fill:#ace,stroke:#333,stroke-width:2px;
-    style EscolherCursoESerie fill:#ace,stroke:#333,stroke-width:2px;
-    style ConsultarTurmasDisponiveis fill:#ace,stroke:#333,stroke-width:2px;
-    style SelecionarTurma fill:#ace,stroke:#333,stroke-width:2px;
-    style NotificarSemVagas fill:#ace,stroke:#333,stroke-width:2px;
-    style RegistrarDataMatricula fill:#ace,stroke:#333,stroke-width:2px;
-
 
 ```
