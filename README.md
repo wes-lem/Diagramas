@@ -5,19 +5,19 @@
     start((start)) --> ManterDadosProfessor[Estado Atividade: Manter Dados do Professor];
 
     subgraph Partição: Secretaria/Administração
-        ManterDadosProfessor --> RegistrarProfessor[Estado Ação: Registrar Professor (CPF, RG, Endereço, Telefone, E-mail, Data Admissão)];
+        ManterDadosProfessor --> RegistrarProfessor[Registrar Professor - CPF, RG, Endereco, Telefone, Email, Data Admissao];
         RegistrarProfessor --> AlocarProfessorEmTurma[Estado Atividade: Alocar Professor em Turma];
-        AlocarProfessorEmTurma --> SelecionarTurma[Estado Ação: Selecionar Turma];
-        SelecionarTurma --> AlocarProfessor[Estado Ação: Alocar Professor];
-        AlocarProfessor --> MonitorarAlocacao[Estado Atividade: Monitorar Alocação];
-        MonitorarAlocacao -- [Professor precisa ser substituído] --> RegistrarHistoricoSubstituicao[Estado Ação: Registrar histórico de substituição (data início/fim professor substituído)];
-        MonitorarAlocacao -- [Professor permanece] --> endPermanencia((end));
-        RegistrarHistoricoSubstituicao --> SubstituirProfessor[Estado Atividade: Substituir Professor];
+        AlocarProfessorEmTurma --> SelecionarTurma[Selecionar Turma];
+        SelecionarTurma --> AlocarProfessor[Alocar Professor];
+        AlocarProfessor --> MonitorarAlocacao[Estado Atividade: Monitorar Alocacao];
+        MonitorarAlocacao -- Professor precisa ser substituido --> RegistrarHistoricoSubstituicao[Registrar historico de substituicao - datas];
+        MonitorarAlocacao -- Professor permanece --> endPermanencia((end));
+        RegistrarHistoricoSubstituicao --> SubstituirProfessor[Substituir Professor];
         SubstituirProfessor --> end((end));
     end
 
     subgraph Partição: Recursos Humanos
-        ManterDadosProfessor -- [Professor Demitido] --> RegistrarDataDemissao[Estado Ação: Registrar data de demissão];
+        ManterDadosProfessor -- Professor Demitido --> RegistrarDataDemissao[Registrar data de demissao];
         RegistrarDataDemissao --> endDemissao((end));
     end
 
@@ -30,4 +30,5 @@
     style RegistrarHistoricoSubstituicao fill:#ace,stroke:#333,stroke-width:2px;
     style SubstituirProfessor fill:#ace,stroke:#333,stroke-width:2px;
     style RegistrarDataDemissao fill:#ace,stroke:#333,stroke-width:2px;
+
 ```
