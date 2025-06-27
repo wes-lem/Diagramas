@@ -1,13 +1,29 @@
 # Diagramas
 
-```mermaid
 graph TD
     subgraph "Sistema de Adoção e Apadrinhamento Animal"
         subgraph "Subsistema: Cadastro de Animais"
             UC1["UC1: Cadastrar Animal"] -- (inclui) --> UC1.1["UC1.1: Gerenciar Fotos do Animal"]
+            note for UC1
+                **User Story:** US01
+                **Tipo:** CRUD Simples
+                **Fluxo Normal:** Abrigo/Protetor acessa "Cadastrar Animal", preenche formulário, anexa fotos, salva.
+            end
             UC1 -- (estende) --> UC1.2["UC1.2: Editar Dados do Animal"]
+            note for UC1.2
+                **Tipo:** CRUD Simples
+                **Fluxo Normal:** Abrigo/Protetor seleciona animal, edita campos, salva.
+            end
             UC1 -- (estende) --> UC1.3["UC1.3: Excluir Animal"]
+            note for UC1.3
+                **Tipo:** CRUD Simples
+                **Fluxo Normal:** Abrigo/Protetor seleciona animal, confirma exclusão.
+            end
             UC1.2 -- (inclui) --> UC1.1
+            note for UC1.1
+                **Tipo:** Consulta Simples/CRUD (fotos)
+                **Fluxo Normal:** Abrigo/Protetor seleciona/upload fotos.
+            end
             A[/"Abrigo/Protetor"/] --> UC1
         end
     end
@@ -22,24 +38,7 @@ graph TD
     linkStyle 2 stroke-width:2px,fill:none,stroke:black;
     linkStyle 3 stroke-width:2px,fill:none,stroke:black;
     linkStyle 4 stroke-width:2px,fill:none,stroke:black;
-
-    note for UC1
-        **User Story:** US01
-        **Tipo:** CRUD Simples
-        **Fluxo Normal:** Abrigo/Protetor acessa "Cadastrar Animal", preenche formulário, anexa fotos, salva.
-    end
-    note for UC1.1
-        **Tipo:** Consulta Simples/CRUD (fotos)
-        **Fluxo Normal:** Abrigo/Protetor seleciona/upload fotos.
-    end
-    note for UC1.2
-        **Tipo:** CRUD Simples
-        **Fluxo Normal:** Abrigo/Protetor seleciona animal, edita campos, salva.
-    end
-    note for UC1.3
-        **Tipo:** CRUD Simples
-        **Fluxo Normal:** Abrigo/Protetor seleciona animal, confirma exclusão.
-    end
+```
 
 ```mermaid
   graph TD
