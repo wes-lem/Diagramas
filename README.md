@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     subgraph "Sistema de Adoção e Apadrinhamento Animal"
         subgraph "Subsistema: Cadastro de Animais"
@@ -33,3 +34,4 @@ graph TD
     linkStyle 2 stroke-width:2px,fill:none,stroke:black;
     linkStyle 3 stroke-width:2px,fill:none,stroke:black;
     linkStyle 4 stroke-width:2px,fill:none,stroke:black;
+```
